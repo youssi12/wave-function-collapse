@@ -18,7 +18,7 @@ const lineV     = 8;
 const w = width / dim;
 const h = height / dim;
 
-// edge match map: [up, right, down, left]
+//   [up, right, down, left]
 const neighbors = {
   [bigT]:      [0, 1, 1, 1],
   [corner0]:   [1, 1, 0, 0],
@@ -56,7 +56,7 @@ function getRandomInt(a, b) {
   return Math.floor(Math.random() * (b - a + 1)) + a;
 }
 
-// Core fix: match current tile's edge with neighbor's opposite edge
+
 function checkCorner(currentEdges, neighborOptions, dir, currentTile) {
   const dirIndex = { up: 0, right: 1, bottom: 2, left: 3 };
   const d = dirIndex[dir];
@@ -66,12 +66,12 @@ function checkCorner(currentEdges, neighborOptions, dir, currentTile) {
     return neighbors[opt][opposite] === currentEdges[d];
   });
 
-  // Avoid repeating the same tile if there's at least 1 other
+   
   const noRepeat = filtered.filter(opt => opt !== currentTile);
 
   if (noRepeat.length > 0) return noRepeat;
   if (filtered.length > 0) return filtered;
-  return [empty]; // fallback
+  return [empty]; 
 }
 
 function setup() {
