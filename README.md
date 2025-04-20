@@ -1,5 +1,4 @@
-# wave-function-collapse
-Absolutely! Here's a polished version of your README section with improved grammar, clarity, and a more professional tone:
+# wave-function-collapse 
 
 ---
 
